@@ -1,0 +1,40 @@
+{
+  "name": "noder-backend",
+  "version": "1.0.0",
+  "description": "Noder — a social network for context layers. Enterprise-grade backend.",
+  "type": "module",
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "worker": "tsx src/workers/index.ts",
+    "worker:prod": "node dist/workers/index.js",
+    "migrate": "tsx src/db/migrate.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0",
+    "@fastify/cookie": "^11.0.1",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/jwt": "^9.0.1",
+    "@fastify/rate-limit": "^10.1.1",
+    "bcryptjs": "^3.0.2",
+    "bull": "^4.16.4",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "fastify-plugin": "^5.0.1",
+    "ioredis": "^5.4.1",
+    "postgres": "^3.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "pino-pretty": "^13.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
